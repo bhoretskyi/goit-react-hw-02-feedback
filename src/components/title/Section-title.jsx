@@ -1,8 +1,10 @@
+import { StyledSection } from "./Section-title.styled";
+
 export function Section({title, children}) {
     return (
-        <section>
+        <StyledSection>
        < h1>{title}</h1>
        {children}
-       </section>
+       </StyledSection>
     )
 }

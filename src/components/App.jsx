@@ -25,7 +25,7 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <div>
+        
           <Section title={'Please leave feedback'}>
           
           <Buttons handleFeedbackClick={this.handleFeedbackClick} />.
@@ -37,7 +37,7 @@ export class App extends Component {
           />
           <Notification message={"There is no feedback"} option ={this.state.total}/>
           </Section>
-        </div>
+        
       </div>
     );
   }
