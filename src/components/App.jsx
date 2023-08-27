@@ -1,10 +1,13 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 
 export class App extends Component {
-  static state = {
+  state = {
     good: 0,
     neutral: 0,
     bad: 0,
+  };
+  handleFeedbackClick = e => {
+    console.log(this.state);
   };
   render() {
     return (
@@ -12,16 +15,18 @@ export class App extends Component {
         <div>
           <h1>Please leave feedback</h1>
           <div>
-            <button>good</button>
+            <button type="button" onClick={this.handleFeedbackClick}>
+              good
+            </button>
             <button>neutral</button>
             <button>bad</button>
           </div>
         </div>
         <div>
           <h2>Statistics</h2>
-          <p>good</p>
-          <p>neutral</p>
-          <p>neutral</p>
+          <p>good {this.state.good}</p>
+          <p>neutral {this.state.neutral}</p>
+          <p>neutral {this.state.good}</p>
         </div>
       </div>
     );
