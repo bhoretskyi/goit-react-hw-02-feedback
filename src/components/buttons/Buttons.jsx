@@ -12,5 +12,6 @@ export function Buttons({ handleFeedbackClick, options }) {
           {option}
         </button>
       )
-    }});
+    }
+  return ''});
 }
