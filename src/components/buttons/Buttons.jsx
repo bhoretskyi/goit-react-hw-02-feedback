@@ -1,30 +1,16 @@
-export function Buttons({ handleFeedbackClick }) {
-  return (
-    <div>
-      <button
-        type="button"
-        onClick={() => {
-          handleFeedbackClick('good');
-        }}
-      >
-        good
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          handleFeedbackClick('neutral');
-        }}
-      >
-        neutral
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          handleFeedbackClick('bad');
-        }}
-      >
-        bad
-      </button>
-    </div>
-  );
+export function Buttons({ handleFeedbackClick, options }) {
+  return options.map(option => {
+    if (option !== 'total') {
+      return (
+        <button
+          key={option}
+          type="button"
+          onClick={() => {
+            handleFeedbackClick(option);
+          }}
+        >
+          {option}
+        </button>
+      )
+    }});
 }

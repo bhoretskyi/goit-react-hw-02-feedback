@@ -25,19 +25,23 @@ export class App extends Component {
   render() {
     return (
       <div>
-        
-          <Section title={'Please leave feedback'}>
+        <Section title={'Please leave feedback'}>
+          <Buttons
+            handleFeedbackClick={this.handleFeedbackClick}
+            options={Object.keys(this.state)}
+          />
           
-          <Buttons handleFeedbackClick={this.handleFeedbackClick} />.
           <Statistics
             good={this.state.good}
             neutral={this.state.neutral}
             bad={this.state.bad}
             total={this.state.total}
           />
-          <Notification message={"There is no feedback"} option ={this.state.total}/>
-          </Section>
-        
+          <Notification
+            message={'There is no feedback'}
+            option={this.state.total}
+          />
+        </Section>
       </div>
     );
   }
